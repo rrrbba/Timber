@@ -44,5 +44,6 @@ int main()
 		// Show everything we just drew
 		window.display();
 	}
+
 	return 0;
 }
