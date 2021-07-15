@@ -19,7 +19,7 @@ int main()
 	//Create a sprite (Class object)
 	Sprite spriteBackground;
 
-	//Atach the texture to the sprite
+	//Attach the texture to the sprite (assoc. Texture object with Sprite object)
 	spriteBackground.setTexture(textureBackground);
 
 	//Set the spriteBackground to cover the screen
