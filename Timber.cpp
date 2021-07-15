@@ -25,6 +25,13 @@ int main()
 	//Set the spriteBackground to cover the screen
 	spriteBackground.setPosition(0, 0);
 
+	// Make a tree sprite
+	Texture textureTree;
+	textureTree.loadFromFile("graphics/tree.png");
+	Sprite spriteTree;
+	spriteTree.setTexture(textureTree);
+	spriteTree.setPosition(810, 0);
+
 	while (window.isOpen())
 	{
 		/*
