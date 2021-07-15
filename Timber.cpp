@@ -74,6 +74,9 @@ int main()
 	float cloud2Speed = 0.0f;
 	float cloud3Speed = 0.0;
 
+	//Variables to control time itself
+	Clock clock;
+
 
 	while (window.isOpen())
 	{
