@@ -81,9 +81,9 @@ int main()
 	while (window.isOpen())
 	{
 		/*
-		*******
+		**********************
 		Handle player's input
-		*******
+		**********************
 		*/
 		if (Keyboard::isKeyPressed(Keyboard::Escape))
 		{
@@ -91,15 +91,34 @@ int main()
 		}
 
 		/*
-		*******
+		*****************
 		Update the scene
-		*******
+		*****************
 		*/
 
+		// Measure time
+		Time dt = clock.restart();
+
+		// Setup the bee
+		if (!beeActive)
+		{
+			// How fast is the bee
+			srand((int)time(0)); //seed the random number generator
+			beeSpeed = (rand() % 200) + 200; //assign var to a # b/w 200 & 399
+
+			//How high is the bee
+			srand((int)time(0) * 10); //seed the random number generator
+			float height = (rand() % 500) + 500; //assign var to a # b/w 500 & 999
+			spriteBee.setPosition(2000, height);
+			beeActive = true;
+
+		}
+
+
 		/*
-		*******
+		***************
 		Draw the scene
-		*******
+		***************
 		*/
 
 
