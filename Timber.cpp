@@ -53,8 +53,8 @@ int main()
 		// Clear everything from the last frame
 		window.clear();
 
-		// Draw game scene here
-
+		// Draw game scene here (uses the window obj to draw the spriteBackground object, in between clearing the display and showing the newly drawn scene
+		window.draw(spriteBackground);
 
 		// Show everything we just drew
 		window.display();
