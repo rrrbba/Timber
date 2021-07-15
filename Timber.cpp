@@ -106,6 +106,17 @@ int main()
 		// Draw game scene here (uses the window obj to draw the spriteBackground object, in between clearing the display and showing the newly drawn scene
 		window.draw(spriteBackground);
 
+		// Draw the clouds
+		window.draw(spriteCloud1);
+		window.draw(spriteCloud2);
+		window.draw(spriteCloud3);
+
+		// Draw the tree
+		window.draw(spriteTree);
+
+		// Draw the bee
+		window.draw(spriteBee);
+
 		// Show everything we just drew
 		window.display();
 	}
