@@ -113,6 +113,35 @@ int main()
 			beeActive = true;
 
 		}
+		else 
+		{
+			// Move the bee
+			spriteBee.setPosition(spriteBee.getPosition().x - (beeSpeed * dt.asSeconds()), spriteBee.getPosition().y);
+
+			// Has the bee reached the left-hand edge of the screen?
+			if (spriteBee.getPosition().x < -100)
+			{
+				// Set it up ready to be a whole new bee next frame
+				beeActive = false;
+			}
+
+		}
+
+		// Manage the clouds
+		//Cloud 1
+		if (!cloud1Active)
+		{
+			//How fast is the cloud
+			srand((int)time(0) * 10); //*10 so that always get a diff seed for each of the clouds
+			cloud1Speed = (rand() % 200);
+
+			//How high is the cloud
+			srand((int)time(0) * 10);
+			float height = (rand() % 150);
+			spriteCloud1.setPosition(-200, height);
+			cloud1Active = true;
+
+		}
 
 
 		/*
