@@ -90,6 +90,13 @@ int main()
 			window.close();
 		}
 
+		//Start the game
+		if (Keyboard::isKeyPressed(Keyboard::Return))
+		{
+			//if Enter key is being pressed, it sets paused to false
+			paused = false;
+		}
+
 		/*
 		*****************
 		Update the scene
