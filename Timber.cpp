@@ -89,7 +89,7 @@ int main()
 
 	//Choose font
 	Font font;
-	font.loadFromFile("fonts/KOMIKAP_.tff");
+	font.loadFromFile("fonts/KOMIKAP_.ttf");
 
 	//Set the font to message
 	messageText.setFont(font);
@@ -228,7 +228,7 @@ int main()
 				}
 			}
 
-			//Cloud 1
+			//Cloud 3
 			if (!cloud3Active)
 			{
 				//How fast is the cloud
@@ -254,6 +254,11 @@ int main()
 					cloud3Active = false;
 				}
 			}
+
+			//Update the score text
+			std::stringstream ss;
+			ss << "Score = " << score;
+			scoreText.setString(ss.str());
 		}
 
 		/*
