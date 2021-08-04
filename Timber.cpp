@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <sstream>
 
 using namespace sf;
 
@@ -79,6 +80,42 @@ int main()
 
 	//Track whether the game is running
 	bool paused = true;
+	
+	//Draw some text
+	int score = 0;
+
+	Text messageText;
+	Text scoreText;
+
+	//Choose font
+	Font font;
+	font.loadFromFile("fonts/KOMIKAP_.tff");
+
+	//Set the font to message
+	messageText.setFont(font);
+	scoreText.setFont(font);
+
+	//Assign the actual message
+	messageText.setString("Press Enter to start!");
+	scoreText.setString("Score = 0");
+
+	//Font size
+	messageText.setCharacterSize(75);
+	scoreText.setCharacterSize(100);
+
+	//Choose color
+	messageText.setFillColor(Color::White);
+	scoreText.setFillColor(Color::White);
+
+	//Position the text
+	FloatRect textRect = messageText.getLocalBounds();
+
+	messageText.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
+
+	messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
+
+	scoreText.setPosition(20, 20);
+	
 
 	while (window.isOpen())
 	{
