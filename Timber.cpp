@@ -284,6 +284,15 @@ int main()
 
 		// Draw the bee
 		window.draw(spriteBee);
+		
+		//Draw the score
+		window.draw(scoreText);
+
+		if(paused)
+		{
+			//Draw message
+			window.draw(messageText);
+		}
 
 		// Show everything we just drew
 		window.display();
