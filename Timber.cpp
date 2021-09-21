@@ -294,7 +294,7 @@ int main()
 			std::stringstream ss;
 			ss << "Score = " << score;
 			scoreText.setString(ss.str());
-		}
+		}  
 
 		/*
 		***************
@@ -338,3 +338,4 @@ int main()
 
 	return 0;
 }
+dd
