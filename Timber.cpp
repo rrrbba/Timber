@@ -321,7 +321,10 @@ int main()
 			std::stringstream ss;
 			ss << "Score = " << score;
 			scoreText.setString(ss.str());
-		}  
+
+
+			
+		}  //End if(!paused)
 
 		/*
 		***************
@@ -365,4 +368,4 @@ int main()
 
 	return 0;
 }
-//chap 4 
+//chap 4 (124)
