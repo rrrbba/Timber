@@ -322,7 +322,13 @@ int main()
 			ss << "Score = " << score;
 			scoreText.setString(ss.str());
 
+			//Update the branch sprites
+			for (int i=0; i < NUM_BRANCHES; i++)
+			{
+				float height = i * 150;
 
+				
+			}
 			
 		}  //End if(!paused)
 
