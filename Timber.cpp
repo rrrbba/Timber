@@ -327,7 +327,22 @@ int main()
 			{
 				float height = i * 150;
 
-				
+				if (branchPositions[i] == side::LEFT)
+				{
+					//Move sprite to the left
+					branches[i].setPosition(610, height);
+
+					//Flip the sprite round the other way
+					branches[i].setRotation(180);
+				}
+				else if (branchPositions[i] == side::RIGHT)
+				{
+					//Move sprite to the right
+					branches[i].setPosition(1330, height);
+
+					//Set the sprite rotation to normal
+					branches[i].setRotation(0);
+				}
 			}
 			
 		}  //End if(!paused)
