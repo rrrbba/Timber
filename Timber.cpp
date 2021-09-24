@@ -343,6 +343,11 @@ int main()
 					//Set the sprite rotation to normal
 					branches[i].setRotation(0);
 				}
+				else
+				{
+					//Hide the branch
+					branches[i].setPosition(3000, height);
+				}
 			}
 			
 		}  //End if(!paused)
