@@ -4,8 +4,31 @@
 using namespace sf;
 
 
-//Function declaration
-void updateBranches(int seed);
+//Function definition
+void updateBranches(int seed) {
+	//Move all the branches down one place
+	for (int j = NUM_BRANCHES - 1; j > 0; j--) { //move all branches down one position starting with the sixth branch
+		branchPositions[j] = branchPositions[j - 1];
+	}
+
+	//Spawn a new branch at position 0
+	//Left, right or none
+	srand((int)time(0) + seed); //guarentees random number seed is always different
+	int r = (rand() % 5); 
+
+	switch (r) {
+	case 0:
+		branchPositions[0] = side::LEFT;
+
+	case 1:
+		branchPositions[0] = side::RIGHT;
+		break;
+
+	default:
+		branchPositions[0] = side::NONE;
+		break;
+	}
+}
 
 const int NUM_BRANCHES = 6;
 Sprite branches[NUM_BRANCHES];
@@ -369,6 +392,11 @@ int main()
 		window.draw(spriteCloud1);
 		window.draw(spriteCloud2);
 		window.draw(spriteCloud3);
+
+		//Draw the branches
+		for (int i = 0; i < NUM_BRANCHES; i++) {
+			window.draw(branches[i]);
+		}
 
 		// Draw the tree
 		window.draw(spriteTree);
