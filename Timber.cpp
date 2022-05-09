@@ -196,6 +196,13 @@ int main()
 	spriteRIP.setTexture(textureRIP);
 	spriteRIP.setPosition(600, 860);
 
+	//Prepare the axe
+	Texture textureAxe;
+	textureAxe.loadFromFile("graphics/axe.png");
+	Sprite spriteAxe;
+	spriteAxe.setTexture(textureAxe);
+	spriteAxe.setPosition(700, 830);
+
 
 	while (window.isOpen())
 	{
