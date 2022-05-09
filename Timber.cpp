@@ -179,11 +179,18 @@ int main()
 		branches[i].setOrigin(220, 20);
 	}
 
-	//updateBranches(1);
-	//updateBranches(2);
-	//updateBranches(3);
-	//updateBranches(4);
-	//updateBranches(5);
+	//Prepare the player
+	Texture texturePlayer;
+	texturePlayer.loadFromFile("graphics/player.png");
+	Sprite spritePlayer;
+	spritePlayer.setTexture(texturePlayer);
+	spritePlayer.setPosition(580, 730);
+
+	//The player starts on the left
+	side playerSide = side::LEFT;
+
+
+
 
 	while (window.isOpen())
 	{
