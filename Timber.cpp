@@ -4,6 +4,14 @@
 using namespace sf;
 
 
+const int NUM_BRANCHES = 6;
+Sprite branches[NUM_BRANCHES];
+
+//Where is the player/branch?
+//Left or Right
+enum class side {LEFT, RIGHT, NONE};
+side branchPositions[NUM_BRANCHES];
+
 //Function definition
 void updateBranches(int seed) {
 	//Move all the branches down one place
@@ -14,29 +22,21 @@ void updateBranches(int seed) {
 	//Spawn a new branch at position 0
 	//Left, right or none
 	srand((int)time(0) + seed); //guarentees random number seed is always different
-	int r = (rand() % 5); 
+	int r = (rand() % 5);
 
 	switch (r) {
-	case 0:
+	case 0: //if r is equal to zero, then add a branch to left side at top of tree
 		branchPositions[0] = side::LEFT;
 
-	case 1:
+	case 1: //if r is equal to one, then branch goes on the right
 		branchPositions[0] = side::RIGHT;
 		break;
 
-	default:
+	default: //if r is anything else(2,3 or 4), no branch will be added at the top
 		branchPositions[0] = side::NONE;
 		break;
 	}
 }
-
-const int NUM_BRANCHES = 6;
-Sprite branches[NUM_BRANCHES];
-
-//Where is the player/branch?
-//Left or Right
-enum class side {LEFT, RIGHT, NONE};
-side branchPositions[NUM_BRANCHES];
 
 int main()
 {
@@ -178,6 +178,12 @@ int main()
 		//Can then spin it around without changing its position
 		branches[i].setOrigin(220, 20);
 	}
+
+	//updateBranches(1);
+	//updateBranches(2);
+	//updateBranches(3);
+	//updateBranches(4);
+	//updateBranches(5);
 
 	while (window.isOpen())
 	{
@@ -422,4 +428,5 @@ int main()
 
 	return 0;
 }
+
 //chap 4 (124)
