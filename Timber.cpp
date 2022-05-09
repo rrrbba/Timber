@@ -148,8 +148,8 @@ int main()
 	//Set the texture for each branch sprite
 	for (int i=0; i< NUM_BRANCHES; i++)
 	{
-		branches[i].setTexture(textureBranch);
-		branches[i].setPosition(-2000, -2000);
+		branches[i].setTexture(textureBranch); //set the texture for each sprite in the branches array
+		branches[i].setPosition(-2000, -2000); //and then hide it off-screen 
 
 		//Set the sprite's origin to dead center
 		//Can then spin it around without changing its position
