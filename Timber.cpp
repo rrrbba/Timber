@@ -189,7 +189,12 @@ int main()
 	//The player starts on the left
 	side playerSide = side::LEFT;
 
-
+	//Prepare the gravestone
+	Texture textureRIP;
+	textureRIP.loadFromFile("graphics/rip.png");
+	Sprite spriteRIP;
+	spriteRIP.setTexture(textureRIP);
+	spriteRIP.setPosition(600, 860);
 
 
 	while (window.isOpen())
