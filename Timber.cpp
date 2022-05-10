@@ -230,6 +230,24 @@ int main()
 		Handle player's input
 		**********************
 		*/
+
+		//To make code work beyond the first chop, detect when the player releases a key and then set acceptInput back to true
+		Event event;
+
+		while (window.pollEvent(event)) { //in a while b/c there might be many events stored in a queue
+		//pollEvent puts data into the event object that describes an operating system event (could be a key press, mouse eventm, game controller action, etc.)
+		//window.pollEvent will load the events one at a time into event
+		//with each pass through the loop, will see whether we are interested in the current event and respond if we are, when it returns false that means there are no more events in the queue and the while loop will exit
+
+			if (event.type == Event::KeyReleased && !paused) { //executes when both a key has been released and the game is not paused
+				//Listen for key presses again
+				acceptInput = true;
+
+				//Hide the axe
+				spriteAxe.setPosition(2000, spriteAxe.getPosition().y);
+			}
+		}
+
 		if (Keyboard::isKeyPressed(Keyboard::Escape))
 		{
 			window.close();
