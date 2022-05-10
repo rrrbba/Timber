@@ -219,6 +219,9 @@ int main()
 	float logSpeedX = 1000;
 	float logSpeedY = -1500;
 
+	//Control the player input
+	bool acceptInput = false;
+
 
 	while (window.isOpen())
 	{
@@ -241,6 +244,48 @@ int main()
 			//Reset the time and the score
 			score = 0;
 			timeRemaining = 6;
+
+			//Make all the branches disappear - starting in the second position
+			for (int i = 1; i < NUM_BRANCHES; i++) {
+				branchPositions[i] = side::NONE;
+			}
+
+			//Make sure the gravestone is hidden
+			spriteRIP.setPosition(675, 2000);
+
+			//Move the player into positon
+			spritePlayer.setPosition(580, 720);
+
+			acceptInput = true;
+		}
+
+		//Wrap the player controls to make sure we are accepting input
+		if (acceptInput) {
+			//First handle pressing the right cursor key
+			if (Keyboard::isKeyPressed(Keyboard::Right)) {
+				//Make sure the player is on the right
+				playerSide = side::RIGHT;
+				score++;
+
+				//Add the amount of time remaining
+				timeRemaining += (2 / score) + .15;
+
+				spriteAxe.setPosition(AXE_POSITION_RIGHT, spriteAxe.getPosition().y);
+
+				spritePlayer.setPosition(1200, 720);
+
+				//Update the branches
+				updateBranches(score);
+
+				//Set the log flying to the left
+				spriteLog.setPosition(810, 720);
+				logSpeedX = -5000;
+				logActive = true;
+
+				acceptInput = true;
+			}
+
+			//Handle the left cursor key
 		}
 
 		/*
