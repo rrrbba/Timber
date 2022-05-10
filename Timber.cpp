@@ -442,6 +442,18 @@ int main()
 		// Draw the tree
 		window.draw(spriteTree);
 
+		//Draw the player
+		window.draw(spritePlayer);
+
+		//Draw the axe
+		window.draw(spriteAxe);
+
+		//Draw the flying log
+		window.draw(spriteLog);
+
+		//Draw the gravestone
+		window.draw(spriteRIP);
+
 		// Draw the bee
 		window.draw(spriteBee);
 		
@@ -464,4 +476,4 @@ int main()
 	return 0;
 }
 
-//chap 4 (124)
+//chap 5 (133)
