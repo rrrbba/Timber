@@ -282,10 +282,34 @@ int main()
 				logSpeedX = -5000; //negative so that it goes to the left
 				logActive = true; //true so that the log moving code animates the log each frame
 
-				acceptInput = true;
+				acceptInput = false;
 			}
 
 			//Handle the left cursor key
+
+			if (Keyboard::isKeyPressed(Keyboard::Left)) {
+				//Make sure the player is on the left
+				playerSide = side::LEFT;
+
+				score++;
+
+				//Add to the amount of time remaining
+				timeRemaining += (2 / score) + .15;
+
+				spriteAxe.setPosition(AXE_POSITION_LEFT, spriteAxe.getPosition().y);
+
+				spritePlayer.setPosition(580, 720);
+
+				//Update the player
+				updateBranches(score);
+
+				//Set the log flying
+				spriteLog.setPosition(810, 720);
+				logSpeedX = 5000; //positive so that it goes to the right
+				logActive = true;
+
+				acceptInput = false;
+			}
 		}
 
 		/*
