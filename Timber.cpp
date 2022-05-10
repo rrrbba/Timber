@@ -267,20 +267,20 @@ int main()
 				playerSide = side::RIGHT;
 				score++;
 
-				//Add the amount of time remaining
-				timeRemaining += (2 / score) + .15;
+				//Adding to the amount of time remaining
+				timeRemaining += (2 / score) + .15; //the higher the score gets, the less additional time is added on
 
-				spriteAxe.setPosition(AXE_POSITION_RIGHT, spriteAxe.getPosition().y);
+				spriteAxe.setPosition(AXE_POSITION_RIGHT, spriteAxe.getPosition().y); //then the axe is moved into right hand side position with spriteaxe.setposition
 
-				spritePlayer.setPosition(1200, 720);
+				spritePlayer.setPosition(1200, 720); //and the player is moved into its right-hand-position as well
 
-				//Update the branches
+				//Update the branches - move all branches down one place and spawn a new random branch (or space) at the top of the tree
 				updateBranches(score);
 
 				//Set the log flying to the left
-				spriteLog.setPosition(810, 720);
-				logSpeedX = -5000;
-				logActive = true;
+				spriteLog.setPosition(810, 720); //moved into its starting postion
+				logSpeedX = -5000; //negative so that it goes to the left
+				logActive = true; //true so that the log moving code animates the log each frame
 
 				acceptInput = true;
 			}
