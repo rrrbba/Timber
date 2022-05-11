@@ -310,17 +310,20 @@ int main()
 
 				spriteAxe.setPosition(AXE_POSITION_RIGHT, spriteAxe.getPosition().y); //then the axe is moved into right hand side position with spriteaxe.setposition
 
-				spritePlayer.setPosition(1200, 720); //and the player is moved into its right-hand-position as well
+				spritePlayer.setPosition(1120, 660); //and the player is moved into its right-hand-position as well
 
 				//Update the branches - move all branches down one place and spawn a new random branch (or space) at the top of the tree
 				updateBranches(score);
 
 				//Set the log flying to the left
-				spriteLog.setPosition(810, 720); //moved into its starting postion
+				spriteLog.setPosition(800, 600); //moved into its starting postion
 				logSpeedX = -5000; //negative so that it goes to the left
 				logActive = true; //true so that the log moving code animates the log each frame
 
 				acceptInput = false;
+
+				//Play a chop sound
+				chop.play();
 			}
 
 			//Handle the left cursor key
@@ -347,6 +350,9 @@ int main()
 				logActive = true;
 
 				acceptInput = false;
+
+				//Play a chop sound
+				chop.play();
 			}
 		}
 
