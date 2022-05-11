@@ -382,6 +382,9 @@ int main()
 				FloatRect textRect = messageText.getLocalBounds();
 				messageText.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
 				messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
+
+				//Play out of time sound
+				outOfTime.play();
 			}
 
 			// Setup the bee
