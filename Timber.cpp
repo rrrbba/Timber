@@ -500,6 +500,21 @@ int main()
 					branches[i].setPosition(3000, height);
 				}
 			}
+
+			//Handle a flying log
+			if (logActive) {
+
+				//Sets the position of the sprite by getting its current horizontal and vertical location with getPosition
+				//Then adding to it using logSpeedX and logSpeedY multiplied by dt.asSeconds
+				spriteLog.setPosition(spriteLog.getPosition().x + (logSpeedX * dt.asSeconds()), spriteLog.getPosition().y + (logSpeedY * dt.asSeconds()));
+
+				//Has the log reached right hand edge? (sees whether the sprite has disappeared out of view on either the left or the right
+				if (spriteLog.getPosition().x < -100 || spriteLog.getPosition().x > 2000) {
+					//Set it up ready to be a whole new log next frame (if it has, the log is moved back to its starting point, ready for the next chop)
+					logActive = false;
+					spriteLog.setPosition(810, 720);
+				}
+			}
 			
 		}  //End if(!paused)
 
@@ -563,4 +578,4 @@ int main()
 	return 0;
 }
 
-//chap 5 (133)
+//chap 5 (144)
