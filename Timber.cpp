@@ -21,7 +21,7 @@ void updateBranches(int seed) {
 
 	//Spawn a new branch at position 0
 	//Left, right or none
-	srand((int)time(0) + seed); //guarentees random number seed is always different
+	srand((int)time(0) + seed); //guarantees random number seed is always different
 	int r = (rand() % 5);
 
 	switch (r) {
