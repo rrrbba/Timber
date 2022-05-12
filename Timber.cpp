@@ -69,6 +69,13 @@ int main()
 	spriteTree.setTexture(textureTree); //whenever spriteTree is drawn, it will show the textureTree texture
 	spriteTree.setPosition(810, 0);
 
+	//Make more trees
+	Texture textureBTree;
+	textureBTree.loadFromFile("graphics/tree2.png");
+	Sprite backgroundTree;
+	backgroundTree.setTexture(textureBTree);
+	backgroundTree.setPosition(190, 5);
+
 	// Prepare the bee (since the bee needs to move, need to declare two bee-related variables
 	Texture textureBee;
 	textureBee.loadFromFile("graphics/bee.png");
@@ -597,6 +604,8 @@ int main()
 
 		// Draw the tree
 		window.draw(spriteTree);
+
+		window.draw(backgroundTree);
 
 		//Draw the player
 		window.draw(spritePlayer);
